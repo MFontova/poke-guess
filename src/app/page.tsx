@@ -24,7 +24,6 @@ export default function Home() {
   
   return (
     <div className="flex flex-col gap-5 px-5 py-10 items-center border-4 rounded-tl-xl rounded-br-xl max-w-xl m-auto">
-      <p> {selectedPokemon?.name} </p>
       <div className="flex gap-3 border-2 p-3 rounded-tl-xl rounded-br-xl w-full focus:outline-none">
         <Image src={pokeball} alt="pokeball" width={25} height={25} />
         <input 
