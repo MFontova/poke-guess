@@ -4,7 +4,6 @@ interface Props {
   compareValue: number | string
 }
 export const Stat = ({title, value, compareValue}: Props) => {
-  console.log(value, compareValue)
   const difference = (Number(compareValue)/10 - Number(value)/10)
   return (
     <div className={`flex flex-col items-center justify-evenly border-2 ${compareValue == value ? 'border-emerald-500': 'border-red-500'} rounded-tl-xl rounded-br-xl p-3 h-[100px] w-[100px]`}>
