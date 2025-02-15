@@ -1,3 +1,5 @@
+"use client"
+
 import { $selectedPokemon, $tries } from "@/stores/pokemonStore";
 import { useStore } from "@nanostores/react";
 import Image from "next/image";

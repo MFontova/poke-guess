@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
+import { Menu } from "@/components/Menu";
 
 const pressStart2P = Press_Start_2P({
   weight: "400",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${pressStart2P.className} antialiased p-3`}
       >
+        <Menu/>
         {children}
       </body>
     </html>
