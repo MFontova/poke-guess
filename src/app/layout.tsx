@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8325684160533356" crossOrigin="anonymous"></script>
+      </head>
       <body
         className={`${pressStart2P.className} antialiased p-3`}
       >
