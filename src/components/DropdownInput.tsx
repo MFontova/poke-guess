@@ -1,18 +1,20 @@
 "use client"
 
 import pokemonData from "@/data/pokemon_data.json";
-import { $search, $selectedPokemon, addTry } from "@/stores/pokemonStore";
+import { $lost, $search, $selectedPokemon, addTry } from "@/stores/pokemonStore";
 import { Pokemon } from "@/types/pokemon";
 import { useStore } from "@nanostores/react";
 import JSConfetti from "js-confetti";
 import Image from "next/image";
 import { useEffect } from "react";
 import { Input } from "./Input";
+import { TryAgain } from "./TryAgain";
 
 export const DropdownInput = ({showImages}: {showImages: boolean}) => {
   const search = useStore($search)
   const selectedPokemon = useStore($selectedPokemon)
   const pokemonList: Pokemon[] = pokemonData as []
+  const lost = useStore($lost)
 
   const filteredPokemon = pokemonList.filter(p => p.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
   
@@ -23,7 +25,11 @@ export const DropdownInput = ({showImages}: {showImages: boolean}) => {
 
   return (
     <>
-      <Input/>
+      {
+        lost
+          ? <TryAgain/>
+          : <Input/>
+      }
       {
         (filteredPokemon.length > 0 && search) && filteredPokemon.map(p => (
           <div className="flex gap-5 items-center w-full" key={p.id} 
