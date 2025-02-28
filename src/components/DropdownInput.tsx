@@ -1,6 +1,6 @@
 "use client"
 
-import pokemonData from "@/data/pokemon_data.json";
+import pokemonData1 from "@/data/pokemon_data_1.json";
 import { $lost, $search, $selectedPokemon, addTry } from "@/stores/pokemonStore";
 import { Pokemon } from "@/types/pokemon";
 import { useStore } from "@nanostores/react";
@@ -13,7 +13,7 @@ import { TryAgain } from "./TryAgain";
 export const DropdownInput = ({showImages}: {showImages: boolean}) => {
   const search = useStore($search)
   const selectedPokemon = useStore($selectedPokemon)
-  const pokemonList: Pokemon[] = pokemonData as []
+  const pokemonList: Pokemon[] = pokemonData1 as []
   const lost = useStore($lost)
 
   const filteredPokemon = pokemonList.filter(p => p.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
