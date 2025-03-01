@@ -10,6 +10,8 @@ export const ScaleShadowImage = () => {
   const tries = useStore($tries)
   const scaleValue = useStore($scale)
 
+  console.log(selectedPokemon)
+
   useEffect(() => {
     if(tries.length > 0) {
       $scale.set(scaleValue - 0.5)
@@ -25,7 +27,7 @@ export const ScaleShadowImage = () => {
           <Image 
             // className={`grayscale brightness-0 left-0`} 
             // style={{transform: `scale(${scaleValue})`}}
-            src={selectedPokemon.sprites.other?.["official-artwork"].front_default as string} 
+            src={selectedPokemon.largeImageUrl} 
             alt="Pokemon" 
             width={500} 
             height={500} 
@@ -35,7 +37,7 @@ export const ScaleShadowImage = () => {
           <Image 
             className={`grayscale brightness-0 left-0`} 
             style={{transform: `scale(${scaleValue})`}}
-            src={selectedPokemon.sprites.other?.["official-artwork"].front_default as string} 
+            src={selectedPokemon.largeImageUrl} 
             alt="Pokemon" 
             width={500} 
             height={500} 

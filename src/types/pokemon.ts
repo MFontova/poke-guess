@@ -1,4 +1,15 @@
-export interface Pokemon {
+export interface Pokemon_ {
+  id: number;
+  name: string;
+  height: number;
+  weight: number;
+  type1: string;
+  type2: string | null;
+  smallImageUrl: string;
+  largeImageUrl: string;
+}
+
+export interface PokemonOld {
   abilities:                Ability[];
   base_experience:          number;
   cries:                    Cries;
