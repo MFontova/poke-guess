@@ -22,4 +22,5 @@ model Pokemon {
   type2 String?
   smallImageUrl String
   largeImageUrl String
+  generation Int?
 }

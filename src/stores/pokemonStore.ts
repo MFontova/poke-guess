@@ -1,5 +1,14 @@
-import { Pokemon } from "@/types/pokemon";
-import { atom, computed } from "nanostores";
+import { Pokemon } from "@prisma/client";
+import { atom, computed, map } from "nanostores";
+
+export const $pokemons = atom<Pokemon[]>([])
+
+export const $limits = map({
+  from: 1,
+  to: 151
+})
+
+export const $selectedGenerations = atom<Set<number>>(new Set())
 
 export const $search = atom("")
 
