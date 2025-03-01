@@ -15,10 +15,10 @@ export const TriedPokemons = () => {
       {
         reversedTries.map((pokemon) => (
           <div key={pokemon.id} className="flex flex-col gap-3 items-center">
-            <Image src={pokemon.sprites.front_default} alt={pokemon.name} width={75} height={75} />
+            <Image src={pokemon.smallImageUrl} alt={pokemon.name} width={75} height={75} />
             <p className="text-[10px]">{pokemon.name}</p>
-            <Stat compareValue={selectedPokemon!.types[0].type.name} title="Tipo 1" value={pokemon.types[0].type.name} />
-            <Stat compareValue={selectedPokemon!.types[1] ? selectedPokemon!.types[1].type.name : 'none'} title="Tipo 2" value={pokemon.types[1] ? pokemon.types[1].type.name : 'none'} />
+            <Stat compareValue={selectedPokemon!.type1} title="Tipo 1" value={pokemon.type1} />
+            <Stat compareValue={selectedPokemon!.type2!} title="Tipo 2" value={pokemon.type2!} />
             <Stat compareValue={selectedPokemon!.height} title="Altura" value={pokemon.height} />
             <Stat compareValue={selectedPokemon!.weight} title="Peso" value={pokemon.weight} />
           </div>

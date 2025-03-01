@@ -1,8 +1,6 @@
 "use client"
 
-import pokemonData1 from "@/data/pokemon_data_1.json";
-import { $lost, $search, $selectedPokemon, addTry } from "@/stores/pokemonStore";
-import { Pokemon } from "@/types/pokemon";
+import { $lost, $pokemons, $search, $selectedPokemon, addTry } from "@/stores/pokemonStore";
 import { useStore } from "@nanostores/react";
 import JSConfetti from "js-confetti";
 import Image from "next/image";
@@ -13,14 +11,14 @@ import { TryAgain } from "./TryAgain";
 export const DropdownInput = ({showImages}: {showImages: boolean}) => {
   const search = useStore($search)
   const selectedPokemon = useStore($selectedPokemon)
-  const pokemonList: Pokemon[] = pokemonData1 as []
   const lost = useStore($lost)
+  const pokemons = useStore($pokemons)
 
-  const filteredPokemon = pokemonList.filter(p => p.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+  const filteredPokemon = pokemons.filter(p => p.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
   
   useEffect(() => {
     const rand = Math.round(Math.random() * 151)
-    $selectedPokemon.set(pokemonList.find(p => p.id == rand))
+    $selectedPokemon.set(pokemons.find(p => p.id == rand))
   }, [])
 
   return (
@@ -42,7 +40,7 @@ export const DropdownInput = ({showImages}: {showImages: boolean}) => {
               }
             }}
             >
-            {showImages && <Image src={p.sprites.front_default} alt={p.name} width={50} height={50} />}
+            {showImages && <Image src={p.smallImageUrl} alt={p.name} width={50} height={50} />}
             <p>{p.name}</p>
           </div>
         ))

@@ -1,3 +1,11 @@
+# Script para traer nuevos Pokemon o hacer update de los que ya tenemos
+```
+npm run import-pokemons {firstId} {lastId}
+
+// example
+npm run import-pokemons 1 151
+```
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

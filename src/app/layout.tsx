@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import { Menu } from "@/components/Menu";
 import { Analytics } from "@vercel/analytics/next";
+import { Menu } from "./components/Menu";
 
 const pressStart2P = Press_Start_2P({
   weight: "400",
