@@ -20,12 +20,15 @@ export const GenerationSelector = () => {
   }
   
   return (
-    <div className="flex gap-2">
-      {
-        generations.map(g => (
-          <button key={g} onClick={() => onClickHandler(g)} className={`border p-3 ${selectedGenerations.has(Number(g)) && 'border-emerald-500'}`}>{g}</button>
-        ))
-      }
-    </div>
+    <>
+      <p className="text-sm">Select generations:</p>
+      <div className="flex gap-2 flex-wrap text-sm">
+        {
+          generations.map(g => (
+            <button key={g} onClick={() => onClickHandler(g)} className={`border p-3 ${selectedGenerations.has(Number(g)) && 'border-emerald-500'}`}>{g}</button>
+          ))
+        }
+      </div>
+    </>
   )
 }
